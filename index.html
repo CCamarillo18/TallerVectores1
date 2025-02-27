@@ -11,7 +11,6 @@
     <header class="main-header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="images/logo.png" alt="Logo Física">
                 <h1>Taller de Vectores</h1>
             </div>
             <ul class="nav-menu">
@@ -32,34 +31,57 @@
             </div>
         </section>
 
-        <section id="teoria" class="content-section">
+        <section id="teoria" class="examples-section">
             <h2>Fundamentos de Vectores</h2>
-            <div class="theory-grid">
-                <div class="theory-card">
-                    <h3>¿Qué es un Vector?</h3>
-                    <p>Aprende los conceptos básicos de magnitudes vectoriales.</p>
-                    <div class="interactive-demo" id="vector-basics"></div>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <img src="images/vector-basics.jpg" alt="Conceptos básicos" class="example-image">
+                    <div class="example-content">
+                        <h3 class="example-title">¿Qué es un Vector?</h3>
+                        <p class="example-description">Aprende los conceptos básicos de magnitudes vectoriales.</p>
+                    </div>
                 </div>
-                <!-- Más tarjetas de teoría aquí -->
+                <div class="example-card">
+                    <img src="images/vector-operations.jpg" alt="Operaciones vectoriales" class="example-image">
+                    <div class="example-content">
+                        <h3 class="example-title">Operaciones con Vectores</h3>
+                        <p class="example-description">Descubre cómo sumar, restar y multiplicar vectores.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="ejercicios" class="exercises-section">
+        <section id="ejercicios" class="examples-section">
             <h2>Ejercicios Prácticos</h2>
-            <div class="exercise-container">
-                <!-- Los ejercicios se cargarán dinámicamente con JavaScript -->
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-content">
+                        <h3 class="example-title">Ejercicio 1: Suma de Vectores</h3>
+                        <p class="example-description">Practica la suma de vectores con ejemplos interactivos.</p>
+                        <div id="vector-sum-simulation" class="simulation-container"></div>
+                        <div class="result-container"></div>
+                        <button class="cta-button">Verificar Respuesta</button>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <div class="example-content">
+                        <h3 class="example-title">Ejercicio 2: Descomposición</h3>
+                        <p class="example-description">Aprende a descomponer vectores en sus componentes.</p>
+                        <div id="vector-decomp-simulation" class="simulation-container"></div>
+                        <div class="result-container"></div>
+                        <button class="cta-button">Verificar Respuesta</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="laboratorio" class="lab-section">
+        <section id="laboratorio" class="examples-section">
             <h2>Laboratorio Virtual</h2>
-            <div class="lab-container">
-                <div class="simulation-area">
-                    <!-- Área de simulación interactiva -->
-                </div>
-                <div class="controls-panel">
-                    <!-- Controles de simulación -->
-                </div>
+            <div class="video-wrapper">
+                <iframe src="https://phet.colorado.edu/sims/html/vector-addition/latest/vector-addition_es.html" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
             </div>
         </section>
     </main>
@@ -68,8 +90,8 @@
         <p>Desarrollado para IED Eduardo Santos - 2024</p>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/exercises.js"></script>
-    <script src="js/simulation.js"></script>
+    <script type="module" src="js/simulation.js"></script>
+    <script type="module" src="js/exercises.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
