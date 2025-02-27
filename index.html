@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Interactivo: Vectores</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <p class="subheader">Docente C. Camarillo. 2025 IED Eduardo Santos.</p>
+        <h1>Taller Interactivo: Comprendiendo la Adición de Vectores</h1>
+        <p>Utiliza la adición de vectores para entender magnitudes y fenómenos naturales en el mundo físico.</p>
+    </div>
+
+    <div class="nav">
+        <button onclick="showPage('page1')" class="nav-btn active">Introducción</button>
+        <button onclick="showPage('page2')" class="nav-btn">Adición de Vectores</button>
+        <button onclick="showPage('page3')" class="nav-btn">Ejercicios</button>
+        <button onclick="showPage('page4')" class="nav-btn">Laboratorio Virtual</button>
+    </div>
+
+    <div class="container">
+        <div id="page1" class="page active">
+            <h2>Introducción a los Vectores</h2>
+            <div class="content-card">
+                <p>Un vector es una magnitud que posee tanto dirección como magnitud. Se utilizan para representar cantidades físicas como:</p>
+                <ul class="vector-examples">
+                    <li>🏃 Velocidad</li>
+                    <li>💪 Fuerza</li>
+                    <li>🔄 Aceleración</li>
+                    <li>📏 Desplazamiento</li>
+                </ul>
+            </div>
+            
+            <div class="interactive-demo">
+                <h3>Ejemplo Interactivo</h3>
+                <canvas id="vectorCanvas"></canvas>
+                <div class="controls">
+                    <button onclick="toggleAnimation()">Iniciar/Detener</button>
+                    <input type="range" id="vectorSpeed" min="1" max="10" value="5">
+                </div>
+            </div>
+        </div>
+
+        <div id="page2" class="page">
+            <h2>Adición de Vectores</h2>
+            <div class="vector-playground">
+                <div class="vector-controls">
+                    <div class="vector-input">
+                        <label>Vector A:</label>
+                        <input type="number" id="vectorAx" placeholder="X">
+                        <input type="number" id="vectorAy" placeholder="Y">
+                    </div>
+                    <div class="vector-input">
+                        <label>Vector B:</label>
+                        <input type="number" id="vectorBx" placeholder="X">
+                        <input type="number" id="vectorBy" placeholder="Y">
+                    </div>
+                    <button onclick="calculateSum()">Calcular Suma</button>
+                </div>
+                <canvas id="vectorSum"></canvas>
+                <div id="result" class="result-display"></div>
+            </div>
+        </div>
+
+        <div id="page3" class="page">
+            <h2>Ejercicios Prácticos</h2>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="exerciseProgress"></div>
+                </div>
+                <span id="progressText">0/10 Completados</span>
+            </div>
+            <div id="exerciseContainer"></div>
+            <div class="navigation-buttons">
+                <button onclick="previousExercise()" id="prevBtn">Anterior</button>
+                <button onclick="nextExercise()" id="nextBtn">Siguiente</button>
+            </div>
+        </div>
+
+        <div id="page4" class="page">
+            <h2>Laboratorio Virtual</h2>
+            <div class="lab-container">
+                <div class="activity-tabs">
+                    <button class="tab-btn active" onclick="showActivity(1)">Exploración Básica</button>
+                    <button class="tab-btn" onclick="showActivity(2)">Práctica Guiada</button>
+                    <button class="tab-btn" onclick="showActivity(3)">Reto Final</button>
+                </div>
+                
+                <div class="activity-content active" id="activity1">
+                    <div class="activity-intro">
+                        <h3>🎯 Primeros Pasos con Vectores</h3>
+                        <p>Sigue estas actividades paso a paso:</p>
+                    </div>
+                    <div class="task-list">
+                        <label class="task-item">
+                            <input type="checkbox" onchange="updateProgress()">
+                            <span class="task-text">1. Crea un vector de magnitud 5 unidades</span>
+                            <div class="task-hint">Usa la herramienta de creación de vectores y ajusta su longitud</div>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" onchange="updateProgress()">
+                            <span class="task-text">2. Rota el vector 45 grados</span>
+                            <div class="task-hint">Haz clic y arrastra la punta del vector</div>
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" onchange="updateProgress()">
+                            <span class="task-text">3. Crea un segundo vector perpendicular al primero</span>
+                            <div class="task-hint">Debe formar un ángulo de 90° con el primer vector</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="activity-content" id="activity2">
+                    <div class="activity-intro">
+                        <h3>🔄 Práctica de Suma de Vectores</h3>
+                        <p>Realiza estos ejercicios prácticos:</p>
+                    </div>
+                    <div class="task-list">
+                        <div class="challenge-card">
+                            <h4>Desafío 1: Método del Paralelogramo</h4>
+                            <ol>
+                                <li>Crea dos vectores de igual magnitud (3 unidades)</li>
+                                <li>Colócalos formando un ángulo de 60°</li>
+                                <li>Encuentra su vector resultante</li>
+                            </ol>
+                            <button class="verify-btn" onclick="verifyChallenge(1)">Verificar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-content" id="activity3">
+                    <div class="activity-intro">
+                        <h3>🏆 Reto Final</h3>
+                        <p>Demuestra tu dominio de los vectores:</p>
+                    </div>
+                    <div class="challenge-container">
+                        <div class="challenge-description">
+                            <h4>Reto: Suma Triple</h4>
+                            <p>Construye y suma tres vectores que formen un triángulo equilátero.</p>
+                            <ul>
+                                <li>Vector 1: Magnitud 4 unidades, 0°</li>
+                                <li>Vector 2: Magnitud 4 unidades, 120°</li>
+                                <li>Vector 3: Magnitud 4 unidades, 240°</li>
+                            </ul>
+                        </div>
+                        <button class="challenge-btn" onclick="checkFinalChallenge()">Comprobar Reto</button>
+                    </div>
+                </div>
+                
+                <div class="iframe-container">
+                    <iframe src="https://phet.colorado.edu/sims/html/vector-addition/latest/vector-addition_all.html?locale=es" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dentro de la página donde quieras mostrar el video -->
+    <div id="videoContainer"></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
