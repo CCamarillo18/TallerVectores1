@@ -79,7 +79,7 @@ class VectorSimulation {
         
         // Dibujar vector actual
         this.drawVector(this.startX, this.startY, this.endX, this.endY);
-e        
+        
         // Mostrar coordenadas
         const result = this.getResult();
         if (result) {
