@@ -1,4 +1,4 @@
-import VectorSimulation from './simulation.js';
+import VectorSimulation from './Simulation.js';  // Notar la mayúscula en Simulation.js
 
 document.addEventListener('DOMContentLoaded', () => {
     // Navegación suave
